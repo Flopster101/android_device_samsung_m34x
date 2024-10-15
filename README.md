@@ -1,8 +1,8 @@
-## TWRP Device Tree for Samsung Galaxy A53 5G
+## TWRP Device Tree for Samsung Galaxy A25 5G
 
-The Galaxy A53 5G (codenamed "_a53x_") is a mid-range smartphone from Samsung.
+The Galaxy A25 5G (codenamed "_a25x_") is a mid-range smartphone from Samsung.
 
-It was announced and released in March 2022.
+It was announced and released in December 2023.
 
 ## Device specifications
 
@@ -14,25 +14,24 @@ I hope this is accurate enough :sweat_smile:.
 | CPU                          | Octa-core (2x2.4 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)                        |
 | GPU                          | Mali-G68 MP5                                                                   |
 | Memory                       | 4GB / 6GB / 8GB RAM                                                            |
-| Shipped OS                   | Android 12 (One UI 4.1)                                                        |
+| Shipped OS                   | Android 14 (One UI 6.1)                                                        |
 | Storage                      | 128GB / 256GB                                                                  |
 | SIM                          | Single SIM (Nano-SIM) or Hybrid Dual SIM (Nano-SIM, dual stand-by)             |
 | MicroSD                      | Up to 1TB                                                                      |
 | Battery                      | 5000mAh Li-Po (non-removable), 25W fast charge                                 |
-| Dimensions                   | 159.6 x 74.8 x 8.1 mm (6.28 x 2.94 x 0.32 in)                                  |
-| Display                      | 6.5", 1080 x 2400 pixels, 20:9 ratio, Super AMOLED, 120Hz (~405 ppi density)   |
-| Rear Camera 1                | 64 MP, f/1.8, 26mm (wide), 0.8µm, PDAF, OIS                                    |
-| Rear Camera 2                | 12 MP, f/2.2, 123˚ (ultrawide), 1.12µm                                         |
-| Rear Camera 3                | 5 MP, f/2.4, (macro)                                                           |
-| Rear Camera 4                | 5 MP, f/2.4, (depth)                                                           |
-| Front Camera                 | 32 MP, f/2.2, 26mm (wide), 1/2.8", 0.8µm                                       |
-| Fingerprint                  | Under display, optical                                                         |
-| Sensors                      | Accelerometer, Gyro, Proximity (virtual), Compass, Barometer                   |
+| Dimensions                   | 161 x 76.5 x 8.3 mm (6.34 x 3.01 x 0.33 in)                                    |
+| Display                      | 6.5", 1080 x 2340 pixels, 19.5:9 ratio, Super AMOLED, 120Hz (~396 ppi density) |
+| Rear Camera 1                | 50 MP, f/1.8, 27mm (wide), 1/2.76", 0.64µm, PDAF, OIS                          |
+| Rear Camera 2                | 8 MP, f/2.2, 120˚ (ultrawide), 1/4", 1.12µm                                    |
+| Rear Camera 3                | 2 MP, f/2.4, (macro)                                                           |
+| Front Camera                 | 13 MP, f/2.2, (wide), 1/3.06", 1.12µm                                          |
+| Fingerprint                  | Fingerprint (side-mounted)                                                     |
+| Sensors                      | Accelerometer, Gyro, Proximity (virtual), Compass                              |
 | Extras                       | Dual speakers, NFC                                                             |
 
 ## Kernel source
 
-https://github.com/mytja/android_kernel_samsung_a53x/tree/twrp-12.1
+https://github.com/Flopster101/a25x-oss-sec/tree/twrp
 
 ## How to obtain dtb/dtbo and kernel modules?
 Download the latest AP file for your device, then extract `recovery.img`, use Android Image Kitchen to `unpackimg.sh`.
@@ -50,20 +49,20 @@ This device tree was tested and is fully compatible with [minimal-manifest-twrp]
 2. In the root folder of the fetched repo, clone the device tree:
 
 ```sh
-git clone https://github.com/mytja/android_device_samsung_a53x.git -b main device/samsung/a53x
+git clone https://github.com/mytja/android_device_samsung_a25x.git -b main device/samsung/a25x
 ```
 
 ```sh
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
-lunch twrp_a53x-eng
+lunch twrp_a25x-eng
 mka recoveryimage
 ```
 
 ## Credits
 All the credits go to following people:
 
-- [Gabriel](https://github.com/Gabriel2392) for his initial [device tree](https://github.com/Gabriel2392/android_device_samsung_a53x) and [ExynosUnbound kernel](https://github.com/Gabriel2392/android_kernel_samsung_a53x_xy), upon which this device tree is based,
-- [mohammad.afaneh92](https://github.com/afaneh92) for his [device tree](https://git.severkar.eu/SM-A536/afaneh92_android_device_samsung_a53x) and [kernel](https://git.severkar.eu/SM-A536/afaneh92_android_kernel_samsung_a53x), upon which Gabriel's device tree is based,
+- [Gabriel](https://github.com/Gabriel2392) for his initial [device tree](https://github.com/Gabriel2392/android_device_samsung_a25x) and [ExynosUnbound kernel](https://github.com/Gabriel2392/android_kernel_samsung_a25x_xy), upon which this device tree is based,
+- [mohammad.afaneh92](https://github.com/afaneh92) for his [device tree](https://git.severkar.eu/SM-A536/afaneh92_android_device_samsung_a25x) and [kernel](https://git.severkar.eu/SM-A536/afaneh92_android_kernel_samsung_a25x), upon which Gabriel's device tree is based,
 - [Salvo Giangreco](https://github.com/salvogiangri) for his [device tree for A54](https://github.com/salvogiangri/android_device_samsung_a54x) and [kernel for A54](https://github.com/salvogiangri/android_kernel_samsung_s5e8835), from which I took some patches and inspiration,
 - and [everyone from this XDA thread](https://xdaforums.com/t/recovery-unofficial-twrp-for-the-galaxy-tab-s9-series.4660962/page-3), which was super useful whilst updating this device tree.
