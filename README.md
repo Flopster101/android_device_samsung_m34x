@@ -1,8 +1,8 @@
-## TWRP Device Tree for Samsung Galaxy A25 5G
+## TWRP Device Tree for Samsung Galaxy M34 5G
 
-The Galaxy A25 5G (codenamed "_a25x_") is a mid-range smartphone from Samsung.
+The Galaxy M34 5G (codenamed "_m34x_") is a mid-range smartphone from Samsung.
 
-It was announced and released in December 2023.
+It was announced and released in July 2023.
 
 ## Device specifications
 
@@ -12,26 +12,26 @@ I hope this is accurate enough :sweat_smile:.
 | ---------------------------: | :----------------------------------------------------------------------------- |
 | Chipset                      | Exynos 1280                                                                    |
 | CPU                          | Octa-core (2x2.4 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)                        |
-| GPU                          | Mali-G68 MP5                                                                   |
-| Memory                       | 4GB / 6GB / 8GB RAM                                                            |
-| Shipped OS                   | Android 14 (One UI 6.1)                                                        |
+| GPU                          | Mali-G68 MP4                                                                   |
+| Memory                       | 6GB / 8GB RAM                                                                  |
+| Shipped OS                   | Android 13                                                                     |
 | Storage                      | 128GB / 256GB                                                                  |
 | SIM                          | Single SIM (Nano-SIM) or Hybrid Dual SIM (Nano-SIM, dual stand-by)             |
 | MicroSD                      | Up to 1TB                                                                      |
-| Battery                      | 5000mAh Li-Po (non-removable), 25W fast charge                                 |
-| Dimensions                   | 161 x 76.5 x 8.3 mm (6.34 x 3.01 x 0.33 in)                                    |
+| Battery                      | 6000mAh Li-Po (non-removable), 25W fast charge                                 |
+| Dimensions                   | 161.7 x 77.2 x 8.8 mm (6.37 x 3.04 x 0.35 in)                                  |
 | Display                      | 6.5", 1080 x 2340 pixels, 19.5:9 ratio, Super AMOLED, 120Hz (~396 ppi density) |
-| Rear Camera 1                | 50 MP, f/1.8, 27mm (wide), 1/2.76", 0.64µm, PDAF, OIS                          |
-| Rear Camera 2                | 8 MP, f/2.2, 120˚ (ultrawide), 1/4", 1.12µm                                    |
+| Rear Camera 1                | 50 MP, f/1.8, PDAF, OIS                                                        |
+| Rear Camera 2                | 8 MP, f/2.2, 120˚ (ultrawide)                                                  |
 | Rear Camera 3                | 2 MP, f/2.4, (macro)                                                           |
-| Front Camera                 | 13 MP, f/2.2, (wide), 1/3.06", 1.12µm                                          |
+| Front Camera                 | 13 MP, f/2.2, (wide)                                                           |
 | Fingerprint                  | Fingerprint (side-mounted)                                                     |
 | Sensors                      | Accelerometer, Gyro, Proximity (virtual), Compass                              |
-| Extras                       | Dual speakers, NFC                                                             |
+| Extras                       | NFC                                                             |
 
 ## Kernel source
 
-https://github.com/Flopster101/a25x-oss-sec/tree/twrp
+https://github.com/FlopKernel-Series/flop_ginkgo_kernel
 
 ## How to obtain dtb/dtbo and kernel modules?
 Download the latest AP file for your device, then extract `recovery.img`, use Android Image Kitchen to `unpackimg.sh`.
@@ -49,20 +49,20 @@ This device tree was tested and is fully compatible with [minimal-manifest-twrp]
 2. In the root folder of the fetched repo, clone the device tree:
 
 ```sh
-git clone https://github.com/mytja/android_device_samsung_a25x.git -b main device/samsung/a25x
+git clone https://github.com/Flopster101/android_device_samsung_m34x.git -b main device/samsung/m34x
 ```
 
 ```sh
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
-lunch twrp_a25x-eng
+lunch twrp_m34x-eng
 mka recoveryimage
 ```
 
 ## Credits
 All the credits go to following people:
 
-- [Gabriel](https://github.com/Gabriel2392) for his initial [device tree](https://github.com/Gabriel2392/android_device_samsung_a25x) and [ExynosUnbound kernel](https://github.com/Gabriel2392/android_kernel_samsung_a25x_xy), upon which this device tree is based,
-- [mohammad.afaneh92](https://github.com/afaneh92) for his [device tree](https://git.severkar.eu/SM-A536/afaneh92_android_device_samsung_a25x) and [kernel](https://git.severkar.eu/SM-A536/afaneh92_android_kernel_samsung_a25x), upon which Gabriel's device tree is based,
+- [Gabriel](https://github.com/Gabriel2392) for his initial [device tree](https://github.com/Gabriel2392/android_device_samsung_a53x) and [ExynosUnbound kernel](https://github.com/Gabriel2392/android_kernel_samsung_a53x_xy), upon which this device tree is based,
+- [mohammad.afaneh92](https://github.com/afaneh92) for his [device tree](https://git.severkar.eu/SM-A536/afaneh92_android_device_samsung_a53x) and [kernel](https://git.severkar.eu/SM-A536/afaneh92_android_kernel_samsung_a53x), upon which Gabriel's device tree is based,
 - [Salvo Giangreco](https://github.com/salvogiangri) for his [device tree for A54](https://github.com/salvogiangri/android_device_samsung_a54x) and [kernel for A54](https://github.com/salvogiangri/android_kernel_samsung_s5e8835), from which I took some patches and inspiration,
 - and [everyone from this XDA thread](https://xdaforums.com/t/recovery-unofficial-twrp-for-the-galaxy-tab-s9-series.4660962/page-3), which was super useful whilst updating this device tree.
