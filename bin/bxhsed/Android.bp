@@ -1,5 +1,5 @@
 cc_binary {
-    name: "bxhsed",
+    name: "bxhsed_m34x",
     recovery: true,
     srcs: ["bxhsed.cpp"]
 }
